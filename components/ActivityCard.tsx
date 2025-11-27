@@ -31,20 +31,30 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
   
   // Helper to parse text and inject inline badges
   const renderTransitInfo = (info: string) => {
-    const splitRegex = /((?:Line|號線|号线)\s?\d+|AREX|Shinbundang|Gyeongui)/gi;
+    // Regex matches "Line X", "X號線", "X号线", "X호선", "AREX", "Shinbundang", "Gyeongui"
+    // Supports number before or after the text
+    const splitRegex = /((?:Line)\s?\d+|\d+\s?(?:號線|号线|호선)|AREX|Shinbundang|Gyeongui)/gi;
     const parts = info.split(splitRegex);
 
     return (
       <div className="text-sm text-slate-700 leading-relaxed">
         <span className="font-bold mr-2">交通:</span>
         {parts.map((part, index) => {
-          const match = part.match(/(?:Line|號線|号线)\s?(\d+)|AREX|Shinbundang|Gyeongui/i);
+          const match = part.match(/(?:Line)\s?\d+|\d+\s?(?:號線|号线|호선)|AREX|Shinbundang|Gyeongui/i);
           if (match) {
-            let lineNum = match[1] || '';
-            const fullMatch = part.toUpperCase();
-            if (fullMatch.includes('AREX')) lineNum = 'A';
-            if (fullMatch.includes('SHINBUNDANG')) lineNum = 'S';
-            if (fullMatch.includes('GYEONGUI')) lineNum = 'K';
+            let lineNum = '';
+            
+            // Extract the number from string (handles "Line 4" and "4號線")
+            const digitMatch = part.match(/\d+/);
+            if (digitMatch) {
+              lineNum = digitMatch[0];
+            } else {
+              // Handle named lines
+              const fullMatch = part.toUpperCase();
+              if (fullMatch.includes('AREX')) lineNum = 'A';
+              if (fullMatch.includes('SHINBUNDANG')) lineNum = 'S';
+              if (fullMatch.includes('GYEONGUI')) lineNum = 'K';
+            }
             
             const colorClass = SUBWAY_LINE_COLORS[lineNum] || SUBWAY_LINE_COLORS.default;
             return (

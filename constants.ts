@@ -65,6 +65,21 @@ export const UI_TEXT = {
     desc: "描述",
     type: "類型"
   },
+  ko: {
+    loading: "꿈같은 서울 여행을 계획 중입니다...",
+    loadingSub: "지하철 경로, 규현 콘서트, 한옥마을 일정을 정리하고 있습니다",
+    day: "Day",
+    footer: "Built with Gemini AI",
+    error: "데이터를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.",
+    addActivity: "일정 추가",
+    save: "저장",
+    cancel: "취소",
+    title: "제목",
+    time: "시간",
+    location: "장소",
+    desc: "설명",
+    type: "유형"
+  },
   en: {
     loading: "Planning your dreamy Seoul Trip...",
     loadingSub: "Organizing subway routes, Kyuhyun's concert, and Hanok visits",

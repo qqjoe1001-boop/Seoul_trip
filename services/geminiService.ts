@@ -212,6 +212,76 @@ const FALLBACK_DATA: Record<Language, TripData> = {
             ]
         }
     ]
+  },
+  ko: {
+    days: [
+        {
+            day: 1, date: "2025-12-18", title: "서울 도착", expenses: [],
+            activities: [
+                { time: "15:15", title: "에바항공 BR160 출발", description: "인천국제공항으로 이동", location: "타오위안 공항 T2", type: "flight", transitInfo: "", imageUrl: SEOUL_IMAGES.flight[0] },
+                { time: "18:45", title: "인천공항 도착", description: "입국 심사 및 수하물 수령", location: "인천공항 T1", type: "flight", transitInfo: "", imageUrl: SEOUL_IMAGES.flight[1] },
+                { time: "19:40", title: "공항버스 6015번", description: "Wecostay Namsan으로 직행", location: "버스 승강장 5B-1", type: "transport", transitInfo: "공항버스 6015 (약 70분) -> [퇴계로3가 한옥마을] 하차", imageUrl: SEOUL_IMAGES.transport[0] },
+                { time: "21:10", title: "Wecostay Namsan 체크인", description: "충무로역 근처", location: "Wecostay Namsan", type: "hotel", transitInfo: "버스 정류장에서 도보 5분", imageUrl: SEOUL_IMAGES.hotel[1] }
+            ]
+        },
+        {
+            day: 2, date: "2025-12-19", title: "고궁과 한옥 산책", expenses: [],
+            activities: [
+                { time: "10:00", title: "광화문광장 & 경복궁", description: "수문장 교대식 관람", location: "경복궁", type: "attraction", transitInfo: "3호선 [충무로역] 탑승 -> 4정거장 -> [경복궁역] 하차", imageUrl: SEOUL_IMAGES.palace[0] },
+                { time: "12:30", title: "점심: 토속촌 삼계탕", description: "따뜻한 전통 삼계탕", location: "토속촌 삼계탕", type: "food", transitInfo: "도보 10분", imageUrl: SEOUL_IMAGES.food[0] },
+                { time: "14:30", title: "북촌한옥마을", description: "전통 한옥의 아름다움", location: "북촌한옥마을", type: "attraction", transitInfo: "도보 15분", imageUrl: SEOUL_IMAGES.hanok[0] },
+                { time: "16:30", title: "인사동 거리", description: "전통 공예품과 찻집", location: "인사동", type: "attraction", transitInfo: "도보 10분", imageUrl: SEOUL_IMAGES.palace[1] },
+                { time: "19:00", title: "저녁: 인사동 한정식", description: "푸짐한 한국 전통 요리", location: "인사동", type: "food", transitInfo: "", imageUrl: SEOUL_IMAGES.food[1] }
+            ]
+        },
+        {
+            day: 3, date: "2025-12-20", title: "명동과 남산타워", expenses: [],
+            activities: [
+                { time: "11:00", title: "명동 쇼핑", description: "화장품 및 길거리 음식", location: "명동 거리", type: "attraction", transitInfo: "4호선 [충무로역] 탑승 -> 1정거장 -> [명동역] 하차", imageUrl: SEOUL_IMAGES.shopping[0] },
+                { time: "13:00", title: "점심: 명동교자", description: "미슐랭 칼국수 맛집", location: "명동교자", type: "food", transitInfo: "도보", imageUrl: SEOUL_IMAGES.food[3] },
+                { time: "16:00", title: "남산 케이블카", description: "N서울타워로 이동", location: "남산 케이블카", type: "transport", transitInfo: "도보 또는 남산 오르미 승강기 이용", imageUrl: SEOUL_IMAGES.tower[0] },
+                { time: "17:30", title: "N서울타워", description: "서울의 노을과 야경 감상", location: "N서울타워", type: "attraction", transitInfo: "", imageUrl: SEOUL_IMAGES.tower[1] },
+                { time: "19:30", title: "저녁: 남산 돈까스", description: "유명한 남산 돈까스 거리", location: "남산 돈까스 거리", type: "food", transitInfo: "도보", imageUrl: SEOUL_IMAGES.food[2] }
+            ]
+        },
+        {
+            day: 4, date: "2025-12-21", title: "규현 콘서트 당일", expenses: [],
+            activities: [
+                { time: "10:00", title: "남산골 한옥마을", description: "고즈넉한 전통 정원 산책", location: "남산골 한옥마을", type: "attraction", transitInfo: "충무로역 근처 도보 10분", imageUrl: SEOUL_IMAGES.hanok[1] },
+                { time: "12:00", title: "점심", description: "충무로 근처 맛집", location: "충무로", type: "food", transitInfo: "", imageUrl: SEOUL_IMAGES.food[3] },
+                { time: "15:00", title: "올림픽공원으로 이동", description: "공연장 이동 및 굿즈 구매", location: "올림픽공원", type: "transport", transitInfo: "4호선 [충무로역] (1정거장) -> [동대문역사문화공원] 환승 -> 5호선 [올림픽공원역] (13정거장)", imageUrl: SEOUL_IMAGES.concert[1] },
+                { time: "17:00", title: "2025 규현 콘서트 'The Classic'", description: "규현의 감미로운 목소리 감상", location: "올림픽홀", type: "concert", transitInfo: "올림픽홀까지 도보", imageUrl: SEOUL_IMAGES.concert[0] },
+                { time: "20:30", title: "뒤풀이 저녁", description: "콘서트 후 식사", location: "방이동 먹자골목", type: "food", transitInfo: "도보", imageUrl: SEOUL_IMAGES.food[2] }
+            ]
+        },
+        {
+            day: 5, date: "2025-12-22", title: "로맨틱 한강 투어", expenses: [],
+            activities: [
+                { time: "11:00", title: "여의도 한강공원", description: "한강 피크닉과 산책", location: "여의도 한강공원", type: "attraction", transitInfo: "4호선 [충무로역] -> [동대문역사문화공원] 환승 -> 5호선 [여의나루역]", imageUrl: SEOUL_IMAGES.river[0] },
+                { time: "13:00", title: "점심: 더현대 서울", description: "트렌디한 푸드코트", location: "더현대 서울", type: "food", transitInfo: "도보", imageUrl: SEOUL_IMAGES.shopping[1] },
+                { time: "15:00", title: "더현대 서울 쇼핑", description: "서울 핫플레이스 백화점", location: "더현대 서울", type: "attraction", transitInfo: "", imageUrl: SEOUL_IMAGES.shopping[1] },
+                { time: "19:00", title: "한강 유람선", description: "이랜드 크루즈 야경", location: "이랜드 크루즈", type: "attraction", transitInfo: "한강공원에서 선착장까지 도보", imageUrl: SEOUL_IMAGES.river[1] }
+            ]
+        },
+        {
+            day: 6, date: "2025-12-23", title: "휴식 및 마지막 쇼핑", expenses: [],
+            activities: [
+                { time: "11:00", title: "브런치 카페", description: "여유로운 커피 타임", location: "을지로3가", type: "food", transitInfo: "3호선 [충무로역] -> 1정거장 -> [을지로3가역] 하차", imageUrl: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" },
+                { time: "14:00", title: "기념품 쇼핑", description: "롯데마트 또는 편의점", location: "롯데마트 서울역점", type: "attraction", transitInfo: "4호선 [충무로역] -> 3정거장 -> [서울역] 하차", imageUrl: "https://images.unsplash.com/photo-1580226993175-922616422cb4?auto=format&fit=crop&q=80&w=800" },
+                { time: "18:00", title: "고별 저녁: 삼겹살", description: "한우 또는 삼겹살 파티", location: "충무로", type: "food", transitInfo: "충무로로 복귀", imageUrl: SEOUL_IMAGES.food[2] }
+            ]
+        },
+        {
+            day: 7, date: "2025-12-24", title: "귀국", expenses: [],
+            activities: [
+                { time: "06:10", title: "체크아웃", description: "공항버스 정류장으로 이동", location: "Wecostay Namsan", type: "hotel", transitInfo: "퇴계로3가 정류장까지 도보", imageUrl: SEOUL_IMAGES.hotel[0] },
+                { time: "06:20", title: "공항버스 6015번", description: "인천공항으로 이동", location: "퇴계로3가 한옥마을", type: "transport", transitInfo: "공항버스 6015 (약 70분)", imageUrl: SEOUL_IMAGES.transport[1] },
+                { time: "07:40", title: "인천공항 도착", description: "텍스 리펀, 체크인, 면세점", location: "인천공항 T1", type: "flight", transitInfo: "", imageUrl: SEOUL_IMAGES.flight[1] },
+                { time: "11:40", title: "에바항공 BR169 출발", description: "안녕 서울", location: "인천공항 T1", type: "flight", transitInfo: "", imageUrl: SEOUL_IMAGES.flight[0] },
+                { time: "13:30", title: "타오위안 공항 도착", description: "집으로", location: "타오위안 공항 T2", type: "flight", transitInfo: "", imageUrl: SEOUL_IMAGES.flight[1] }
+            ]
+        }
+    ]
   }
 };
 
@@ -223,6 +293,7 @@ export const generateItinerary = async (lang: Language): Promise<TripData> => {
     switch (lang) {
       case 'en': languageInstruction = "English"; break;
       case 'ja': languageInstruction = "Japanese"; break;
+      case 'ko': languageInstruction = "Korean"; break;
       default: languageInstruction = "Traditional Chinese (繁體中文)"; break;
     }
 
@@ -262,6 +333,7 @@ export const generateItinerary = async (lang: Language): Promise<TripData> => {
     - English Example: "Line 4 [Chungmuro] (1 stop) -> Transfer at [DDP] -> Line 5 [Olympic Park] (13 stops)"
     - Chinese Example: "4號線 [忠武路站] (1站) -> [東大門歷史文化公園] 轉乘 -> 5號線 [奧林匹克公園站] (13站)"
     - Japanese Example: "4号線 [忠武路] (1駅) -> [東大門歴史文化公園] で乗換 -> 5号線 [オリンピック公園] (13駅)"
+    - Korean Example: "4호선 [충무로역] (1정거장) -> [동대문역사문화공원] 환승 -> 5호선 [올림픽공원역] (13정거장)"
 
     PLANNING STRATEGY:
     - Group A (Historical): Gwanghwamun -> Gyeongbokgung -> Bukchon -> Insadong.

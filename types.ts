@@ -1,4 +1,4 @@
-export type Language = 'zh' | 'en' | 'ja';
+export type Language = 'zh' | 'ko' | 'en' | 'ja';
 
 export interface Expense {
   id: string;

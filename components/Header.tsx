@@ -29,7 +29,12 @@ const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, currentDayPl
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString(currentLang === 'zh' ? 'zh-TW' : currentLang === 'ja' ? 'ja-JP' : 'en-US', {
+    let locale = 'en-US';
+    if (currentLang === 'zh') locale = 'zh-TW';
+    else if (currentLang === 'ja') locale = 'ja-JP';
+    else if (currentLang === 'ko') locale = 'ko-KR';
+
+    return date.toLocaleDateString(locale, {
       weekday: 'short',
       month: 'long',
       day: 'numeric'
@@ -56,7 +61,13 @@ const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, currentDayPl
                 onClick={() => onLangChange('zh')}
                 className={`px-3 py-1 rounded-full text-lg font-bold transition-all ${currentLang === 'zh' ? 'bg-white text-rose-500 shadow-sm' : 'text-slate-400 hover:text-rose-400'}`}
               >
-                繁中
+                ZH
+              </button>
+              <button 
+                onClick={() => onLangChange('ko')}
+                className={`px-3 py-1 rounded-full text-lg font-bold transition-all ${currentLang === 'ko' ? 'bg-white text-rose-500 shadow-sm' : 'text-slate-400 hover:text-rose-400'}`}
+              >
+                KO
               </button>
               <button 
                 onClick={() => onLangChange('en')}
